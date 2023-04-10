@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { addItem, removeItem } from './todoSlice'
 
-function App() {
+
+const App = () => {
+  const items = useSelector(state => state.todo.items)
+  const dispatch = useDispatch()
+  const [newItem, setNewItem] = useState('')
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch(addItem(newItem))
+    setNewItem('')
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={newItem}
+          onChange={e => setNewItem(e.target.value)}
+        />
+        <button type="submit">Add</button>
+      </form>
+      <ul>
+        {items.map((item, index)=> (
+          <li key={index}>
+            {item}
+            <button onClick={()=> dispatch(removeItem(index))}>X</button>
+          </li>
+        ))}
+      </ul>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
