@@ -25,7 +25,7 @@ const App = () => {
           value={newItem}
           onChange={e => setNewItem(e.target.value)}
         />
-        <button type="submit">Add Item</button>
+        <button type="submit">Add Items</button>
    
       </form>
       <ul>
