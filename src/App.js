@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { addItem, removeItem } from './todoSlice';
+import {useState} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { addItem, removeItem } from './todoSlice'
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { css } from '@emotion/react';
+import { css } from '@emotion/react'
+
 
 const StyledButton = styled(Button)(
   ({ theme }) => css`
@@ -18,36 +19,15 @@ const StyledButton = styled(Button)(
 );
 
 const App = () => {
-  const items = useSelector(state => state.todo.items);
-  const dispatch = useDispatch();
-  const [newItem, setNewItem] = useState('');
+  const items = useSelector(state => state.todo.items)
+  const dispatch = useDispatch()
+  const [newItem, setNewItem] = useState('')
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addItem(newItem));
-    setNewItem('');
-
-    // Show a notification when a new item is added
-    if ('Notification' in window) {
-      Notification.requestPermission().then(permission => {
-        if (permission === 'granted') {
-          try {
-            new Notification(`"${newItem}" added to the list`);
-          } catch (e) {
-            console.error('Error creating notification:', e);
-          }
-        } else if (permission === 'denied') {
-          console.warn('Notification permission denied');
-        } else {
-          console.warn('Notification permission not granted or denied');
-        }
-      }).catch(error => {
-        console.error('Error requesting notification permission:', error);
-      });
-    } else {
-      console.warn('Web Notifications API not supported');
-    }
-  };
+    dispatch(addItem(newItem))
+    setNewItem('')
+  }
 
   return (
     <div>
@@ -57,7 +37,8 @@ const App = () => {
           value={newItem}
           onChange={e => setNewItem(e.target.value)}
         />
-        <StyledButton type="submit">Add Item</StyledButton>
+       <StyledButton>Click me!</StyledButton>
+       
       </form>
       <ul>
         {items.map((item, index)=> (
@@ -68,7 +49,7 @@ const App = () => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
