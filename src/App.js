@@ -6,18 +6,6 @@ import { styled } from '@mui/material/styles';
 import { css } from '@emotion/react'
 
 
-const StyledButton = styled(Button)(
-  ({ theme }) => css`
-    background-color: ${theme.palette.primary.main};
-    color: ${theme.palette.primary.contrastText};
-    border-radius: 5px;
-    padding: 10px 20px;
-    &:hover {
-      background-color: ${theme.palette.primary.dark};
-    }
-  `
-);
-
 const App = () => {
   const items = useSelector(state => state.todo.items)
   const dispatch = useDispatch()
@@ -37,8 +25,9 @@ const App = () => {
           value={newItem}
           onChange={e => setNewItem(e.target.value)}
         />
-       <StyledButton>Click me!</StyledButton>
-       
+        <button type="submit">Add Item</button>
+        <button>Add 1</button>
+        <button >Add 2</button>
       </form>
       <ul>
         {items.map((item, index)=> (
