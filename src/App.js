@@ -22,7 +22,9 @@ const App = () => {
           value={newItem}
           onChange={e => setNewItem(e.target.value)}
         />
-        <button type="submit" color="danger">Add Item</button>
+        <button type="submit">Add Item</button>
+        <button>Add 1</button>
+        <button >Add 2</button>
       </form>
       <ul>
         {items.map((item, index)=> (
