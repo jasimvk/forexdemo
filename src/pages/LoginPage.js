@@ -7,6 +7,7 @@ import SilverSpotRateComponent from '../components/SilverSpotRateComponent ';
 import GoldValueCalculator from '../components/GoldValueCalculator';
 import GoldPriceTable from '../components/GoldPriceTable';
 import GoldPriceNewsTicker from '../components/GoldPriceNewsTicker ';
+import FloatingButton from '../components/FloatingButton';
 import useResponsive from '../hooks/useResponsive';
 import Logo from '../components/logo';
 import DateTimeView from '../components/DateTimeView';
@@ -58,10 +59,12 @@ export default function LoginPage() {
           </Grid>
         </Grid>
         <GoldSpotRateComponent />
-        <SilverSpotRateComponent />
+    
         <GoldValueCalculator/>
         <GoldPriceTable/>
         <GoldPriceNewsTicker/>
+        <FloatingButton/>
+        
       </Container>
     </>
   );

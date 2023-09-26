@@ -1,47 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import mockData from '../_mock/mockData'; // Import the global mock data
 
 const GoldPriceTable = () => {
   const [goldPrices, setGoldPrices] = useState([]);
-  
+
   useEffect(() => {
-    // Fetch gold prices for different quantities from the new API endpoint
-    fetch('https://www.goldapi.io/api/XAU/USD', {
-      method: 'GET',
-      headers: {
-        'x-access-token': 'goldapi-2v38apbrln02mq2x-io',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Extract gold prices for different quantities
-        const goldPricesData = [
-          {
-            quantity: '1 gm',
-            buyPrice: data.price_gram_24k,
-            sellPrice: data.price_gram_24k,
-          },
-          {
-            quantity: '1 kg',
-            buyPrice: data.price_gram_24k * 1000,
-            sellPrice: data.price_gram_24k * 1000,
-          },
-          {
-            quantity: '10 kg',
-            buyPrice: data.price_gram_24k * 10000,
-            sellPrice: data.price_gram_24k * 10000,
-          },
-          {
-            quantity: '10 oz',
-            buyPrice: data.price_gram_24k * 10 * 35.27396,
-            sellPrice: data.price_gram_24k * 10 * 35.27396,
-          },
-        ];
-        setGoldPrices(goldPricesData);
-      })
-      .catch((error) => {
-        console.error('Error fetching gold prices:', error);
-      });
+    
+    const goldPricesData = mockData.goldPriceTable;
+    setGoldPrices(goldPricesData);
   }, []);
 
   if (goldPrices.length === 0) {

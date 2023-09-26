@@ -1,45 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, Typography, TextField, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import mockData from '../_mock/mockData'; // Import the global mock data
 
 const GoldValueCalculator = () => {
-  const [goldRate, setGoldRate] = useState(null);
+  const { goldRate } = mockData.goldValueCalculator; // Extract the gold rate from mock data
   const [quantity, setQuantity] = useState(1); // Default quantity
   const [unit, setUnit] = useState('oz'); // Default unit
   const [calculatedValue, setCalculatedValue] = useState(null);
 
   useEffect(() => {
-    // Fetch gold spot rate data from the API
-    fetch('https://www.goldapi.io/api/XAU/USD', {
-      method: 'GET',
-      headers: {
-        'x-access-token': 'goldapi-2v38apbrln02mq2x-io',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Extract the gold spot rate from the API response
-        setGoldRate(data.price);
-      })
-      .catch((error) => {
-        console.error('Error fetching gold spot rate:', error);
-      });
-  }, []);
+    // Calculate the value based on the quantity, unit, and mock gold rate
+    let calculatedValue = 0;
 
-  useEffect(() => {
-    // Calculate the value based on the quantity, unit, and gold rate
-    if (goldRate !== null) {
-      let calculatedValue = 0;
-
-      if (unit === 'oz') {
-        calculatedValue = (quantity * goldRate).toFixed(2);
-      } else if (unit === 'kg') {
-        calculatedValue = (quantity * 35.27396 * goldRate).toFixed(2);
-      } else if (unit === 'gm') {
-        calculatedValue = (quantity * 0.03527396 * goldRate).toFixed(2);
-      }
-
-      setCalculatedValue(calculatedValue);
+    if (unit === 'oz') {
+      calculatedValue = (quantity * goldRate).toFixed(2);
+    } else if (unit === 'kg') {
+      calculatedValue = (quantity * 35.27396 * goldRate).toFixed(2);
+    } else if (unit === 'gm') {
+      calculatedValue = (quantity * 0.03527396 * goldRate).toFixed(2);
     }
+
+    setCalculatedValue(calculatedValue);
   }, [quantity, unit, goldRate]);
 
   const handleQuantityChange = (event) => {
@@ -76,11 +57,9 @@ const GoldValueCalculator = () => {
           onChange={handleQuantityChange}
           sx={{ marginBottom: 2 }}
         />
-        {goldRate !== null && (
-          <Typography variant="body2" color="textSecondary" gutterBottom>
-            Gold Spot Rate: {goldRate} USD per ounce
-          </Typography>
-        )}
+        <Typography variant="body2" color="textSecondary" gutterBottom>
+          Gold Spot Rate: {goldRate} USD per ounce (Mock Data)
+        </Typography>
         {calculatedValue !== null && (
           <Typography variant="body2">
             Value: {calculatedValue} USD
