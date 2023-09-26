@@ -18,13 +18,13 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
 
   // OR using local (public folder)
   // -------------------------------------------------------
-  // const logo = (
-  //   <Box
-  //     component="img"
-  //     src="/logo/logo_single.svg" => your path
-  //     sx={{ width: 40, height: 40, cursor: 'pointer', ...sx }}
-  //   />
-  // );
+  const logoimg = (
+    <Box
+      component="img"
+      src="/assets/Demologo.png"
+      sx={{ width: 150, height: 40, cursor: 'pointer', ...sx }}
+    />
+  );
 
   const logo = (
     <Box
@@ -38,9 +38,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
       }}
       {...other}
     >
-      <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-              LOGO
-            </Typography>
+     {logoimg}
     </Box>
   );
 

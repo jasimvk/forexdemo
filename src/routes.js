@@ -15,7 +15,7 @@ import DashboardAppPage from './pages/DashboardAppPage';
 export default function Router() {
   const routes = useRoutes([
     {
-      path: '/login',
+      path: '/demo',
       //  element: <Navigate to="/login" />, index: true  ,
         element: <LoginPage />,
     },
@@ -34,7 +34,7 @@ export default function Router() {
   
     {
       path: '*',
-      element: <Navigate to="/login" replace />,
+      element: <Navigate to="/demo" replace />,
     },
   ]);
 

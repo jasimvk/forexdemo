@@ -11,21 +11,18 @@ const DateTimeView = () => {
         return () => clearInterval(interval);
     }, []);
     return (
-        <Card sx={{ m: 2,p:1 }}>
+        <Card sx={{ m: 2,p:1,
+        // backgroundColor:"#f9fafbcc"
+         }}>
             <Typography variant="h4"
                 sx={{ p: 1,pb:0 }}>
                 {date.toLocaleTimeString()}
             </Typography>
-            <Typography variant="h6"
+            <Typography variant="subtitle2"
                 sx={{  p:1,pt:0 }}>
                 {`${date.toLocaleDateString('en-US', { weekday: 'long' })}, ${date.toLocaleDateString()}`}
             </Typography>
-            {/* <CardHeader
-                sx={{ p: 2, fontSize: 15 }}
-                // title={date.toLocaleTimeString()} 
-                // style={{fontSize:20}}
-                title={`${date.toLocaleDateString('en-US', { weekday: 'long' })}, ${date.toLocaleDateString()}`}
-            /> */}
+        
         </Card>
     );
 };

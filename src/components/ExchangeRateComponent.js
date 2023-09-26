@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Divider, Typography } from '@mui/material';
 
 const ExchangeRateComponent = () => {
   const [exchangeRates, setExchangeRates] = useState(null);
-  const selectedCurrencies = ['USD', 'INR', 'GBP', 'EUR'];
+  const selectedCurrencies = ['USD', 'AED', 'INR', 'GBP', 'EUR'];
 
   useEffect(() => {
     // Fetch exchange rates data from the API
@@ -35,17 +35,27 @@ const ExchangeRateComponent = () => {
   }
 
   return (
-    <Card sx={{ m: 2 }}>
+    <Card sx={{ m: 2,p:1,pt:0,pb:0,
+    // backgroundColor:"#f9fafbcc"  
+    }}>
       <CardContent>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' ,alignItems:"center"}}>
           {selectedCurrencies.map((currency) => (
-            <div key={currency} style={{ textAlign: 'center' }}>
-              <Typography variant="subtitle1" gutterBottom>
-                {currency}
-              </Typography>
-              <Typography variant="body2">
-                {exchangeRates[currency].toFixed(2)}
-              </Typography>
+            <div style={{ display: 'flex', justifyContent: 'flex-start' ,alignItems:"center"}}>
+              <img src={`../assets/flags/${currency}.svg`} 
+              style={{width:50,maxHeight:33,marginRight:5}}
+              alt={currency} />
+              <div key={currency} style={{ textAlign: 'left',justifyContent:"center" }}>
+                <Typography variant="subtitle1" >
+                  {currency} 
+                </Typography>   
+                <Typography variant="subtitle2" >
+                  
+                  {exchangeRates[currency].toFixed(2)}
+                </Typography>
+                {/* */}
+              </div>
+               
             </div>
           ))}
         </div>

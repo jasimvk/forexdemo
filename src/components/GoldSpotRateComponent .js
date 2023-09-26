@@ -12,23 +12,23 @@ const GoldSpotRateComponent = () => {
     return (
         <Card sx={{ m: 2 }}>
             <CardContent>
-                <Typography variant="h5" gutterBottom>
+                <Typography variant="h3" gutterBottom>
                     Gold Spot Rate
                 </Typography>
                 <Typography variant="h3" component="div">
-                    {goldRate} AED
+                    {goldRate.toFixed(2)} AED
                 </Typography>
                 <Typography variant="body2" color="textSecondary" gutterBottom>
-                    Ask Price: {askPrice} AED
+                    Ask Price: {askPrice.toFixed(2)} AED
                 </Typography>
                 <Typography variant="body2" color="textSecondary" gutterBottom>
-                    Bid Price: {bidPrice} AED
+                    Bid Price: {bidPrice.toFixed(2)} AED
                 </Typography>
                 <Typography variant="body2" color="textSecondary" gutterBottom>
-                    Low Price: {lowPrice} AED
+                    Low Price: {lowPrice.toFixed(2)} AED
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
-                    High Price: {highPrice} AED
+                    High Price: {highPrice.toFixed(2)} AED
                 </Typography>
             </CardContent>
         </Card>

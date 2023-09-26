@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { styled } from '@mui/material/styles';
-import { Link, Container, Typography, Grid, Card } from '@mui/material';
+import { Link, Container, Typography, Grid, Card, Box } from '@mui/material';
+import { Image } from '@mui/icons-material';
 import ExchangeRateComponent from '../components/ExchangeRateComponent';
 import GoldSpotRateComponent from '../components/GoldSpotRateComponent ';
 import SilverSpotRateComponent from '../components/SilverSpotRateComponent ';
@@ -28,7 +29,7 @@ export default function LoginPage() {
   const mdUp = useResponsive('up', 'md');
 
   const containerStyle = {
-    backgroundImage: 'url("/assets/forexBg.svg")',
+    // backgroundImage: 'url("/assets/forexBg.svg")',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -43,28 +44,30 @@ export default function LoginPage() {
 
       <Container maxWidth="xl" style={containerStyle}>
         <Grid container spacing={0}> {/* Removed spacing */}
-          <Grid item xs={1} md={1} lg={1}>
-
-            <Card sx={{ m: 2 }}>
-              <Typography variant="h4" sx={{ mb: 5 }}>
-                logo Name
-              </Typography>
-            </Card>
+          <Grid item xs={1} md={2} lg={2}>
+ 
+         
+            <Box
+            component="img"
+            src="/assets/Demologo.png"
+            sx={{ height: 45,m: 4 }}
+          />
+         
           </Grid>
-          <Grid item xs={12} md={0} lg={9}>
+          <Grid item xs={12} md={7} lg={7}>
             <ExchangeRateComponent />
           </Grid>
-          <Grid item xs={12} md={2} lg={2}>
+          <Grid item xs={12} md={3} lg={3}>
             <DateTimeView />
           </Grid>
         </Grid>
         <GoldSpotRateComponent />
-    
-        <GoldValueCalculator/>
-        <GoldPriceTable/>
-        <GoldPriceNewsTicker/>
-        <FloatingButton/>
-        
+
+        <GoldValueCalculator />
+        <GoldPriceTable />
+        <GoldPriceNewsTicker />
+        <FloatingButton />
+
       </Container>
     </>
   );
