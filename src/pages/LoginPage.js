@@ -59,12 +59,24 @@ export default function LoginPage() {
           </Grid>
           <Grid item xs={12} md={3} lg={3}>
             <DateTimeView />
-          </Grid>
-        </Grid>
-        <GoldSpotRateComponent />
+          </Grid>   
+           <Grid item xs={12} md={4} lg={4}>
+           <GoldValueCalculator />
 
-        <GoldValueCalculator />
-        <GoldPriceTable />
+          </Grid>
+           <Grid item xs={12} md={4} lg={4}>
+           <GoldSpotRateComponent />
+
+          </Grid> 
+          <Grid item xs={12} md={4} lg={4}>
+          <GoldPriceTable />
+
+          </Grid>
+         
+        </Grid>
+      
+      
+      
         <GoldPriceNewsTicker />
         <FloatingButton />
 

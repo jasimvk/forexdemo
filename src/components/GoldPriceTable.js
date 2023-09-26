@@ -26,9 +26,9 @@ const GoldPriceTable = () => {
   return (
     <Card sx={{ m: 2 }}>
       <CardContent>
-        <Typography variant="h5" gutterBottom>
+        {/* <Typography variant="h5" gutterBottom>
           Gold Buy and Sell Prices
-        </Typography>
+        </Typography> */}
         <TableContainer component={Paper}>
           <Table>
             <TableHead>
