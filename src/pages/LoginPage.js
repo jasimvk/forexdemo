@@ -1,12 +1,13 @@
 import { Helmet } from 'react-helmet-async';
 import { styled } from '@mui/material/styles';
 import { Link, Container, Typography, Grid, Card } from '@mui/material';
+import ExchangeRateComponent from '../components/ExchangeRateComponent';
 import GoldSpotRateComponent from '../components/GoldSpotRateComponent ';
 import SilverSpotRateComponent from '../components/SilverSpotRateComponent ';
 import GoldValueCalculator from '../components/GoldValueCalculator';
 import GoldPriceTable from '../components/GoldPriceTable';
+import GoldPriceNewsTicker from '../components/GoldPriceNewsTicker ';
 import useResponsive from '../hooks/useResponsive';
-import ExchangeRateComponent from '../components/ExchangeRateComponent';
 import Logo from '../components/logo';
 import DateTimeView from '../components/DateTimeView';
 
@@ -60,6 +61,7 @@ export default function LoginPage() {
         <SilverSpotRateComponent />
         <GoldValueCalculator/>
         <GoldPriceTable/>
+        <GoldPriceNewsTicker/>
       </Container>
     </>
   );
