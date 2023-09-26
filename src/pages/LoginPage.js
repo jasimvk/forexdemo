@@ -47,7 +47,7 @@ export default function LoginPage() {
 
             <Card sx={{ m: 2 }}>
               <Typography variant="h4" sx={{ mb: 5 }}>
-                logo name
+                logo Name
               </Typography>
             </Card>
           </Grid>
