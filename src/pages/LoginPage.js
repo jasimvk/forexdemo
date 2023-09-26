@@ -21,13 +21,21 @@ const StyledRoot = styled('div')(({ theme }) => ({
 export default function LoginPage() {
   const mdUp = useResponsive('up', 'md');
 
+  const containerStyle = {
+    backgroundImage: 'url("/assets/forexBg.svg")',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    width: '100%',
+    height: '100vh', // You can adjust the height as needed
+  };
   return (
     <>
       <Helmet>
         <title>Forex Gold | Demo</title>
       </Helmet>
 
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" style={containerStyle}>
         <Grid container spacing={0}> {/* Removed spacing */}
           <Grid item xs={1} md={1} lg={1}>
 
