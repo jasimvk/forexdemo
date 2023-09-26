@@ -27,10 +27,10 @@ const GoldPriceNewsTicker = () => {
               <Slide
                 key={index}
                 in={index === currentNewsIndex}
-                direction="up"
+                direction="right"
                 timeout={{ enter: 1000, exit: 1000 }} 
                 mountOnEnter
-                unmountOnExit
+                unmountOnExixt
               >
                 <ListItem>
                   <ListItemText primary={news.title} secondary={news.date} />

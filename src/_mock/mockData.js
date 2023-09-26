@@ -1,10 +1,10 @@
 const mockData = {
     goldSpotRate: {
-      goldRate: 7027.9975, 
-      askPrice: 7029.2462,  
-      bidPrice: 7026.8958,  
-      lowPrice: 7026.00,    
-      highPrice: 7030.00,  
+      goldRate: 7027.9975 * 0.2723,
+  askPrice: 7029.2462 * 0.2723,
+  bidPrice: 7026.8958 * 0.2723,
+  lowPrice: 7026.00 * 0.2723,
+  highPrice: 7030.00 * 0.2723,
     },
     goldValueCalculator: {
       goldRate: 1725.50, 

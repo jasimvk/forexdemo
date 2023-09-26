@@ -14,6 +14,10 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LanguageIcon from '@mui/icons-material/Language';
 
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
 const FloatingButton = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,13 +43,23 @@ const FloatingButton = () => {
           Contact Us
         </Button>
       </div>
+    
       <Modal
         open={isOpen}
         onClose={handleCloseModal}
         aria-labelledby="contact-modal"
         aria-describedby="contact-info"
       >
-        <Card sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', maxWidth: '50%' }}>
+        <Card
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '80%', // Adjust the width for responsiveness
+            maxWidth: '400px', // Set a maximum width if needed
+          }}
+        >
           <CardContent>
             <Typography variant="h5" gutterBottom>
               Contact Information
@@ -53,28 +67,59 @@ const FloatingButton = () => {
             <Box display="flex" justifyContent="space-between">
               <List>
                 <ListItem>
-                  <ListItemText primary="Twitter" secondary="https://twitter.com/example" />
+                  <TwitterIcon />
+                  <ListItemText
+                    primary="Twitter"
+                    secondary={
+                      <a href="https://twitter.com/example" target="_blank" rel="noopener noreferrer" >
+                        
+                      w</a>
+                    }
+                  />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="Facebook" secondary="https://www.facebook.com/example" />
+                  <FacebookIcon />
+                  <ListItemText
+                    primary="Facebook"
+                    secondary={
+                      <a href="https://www.facebook.com/example" target="_blank" rel="noopener noreferrer">
+                        
+                      w</a>
+                    }
+                  />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="Instagram" secondary="https://www.instagram.com/example" />
+                  <InstagramIcon />
+                  <ListItemText
+                    primary="Instagram"
+                    secondary={
+                      <a href="https://www.instagram.com/example" target="_blank" rel="noopener noreferrer">
+                        
+                      w</a>
+                    }
+                  />
                 </ListItem>
                 {/* Add more social media links here */}
               </List>
               <List>
                 <ListItem>
-                  <EmailIcon fontSize="small" />
+                  <EmailIcon />
                   <ListItemText primary="Email" secondary="contact@example.com" />
                 </ListItem>
                 <ListItem>
-                  <PhoneIcon fontSize="small" />
+                  <PhoneIcon />
                   <ListItemText primary="Phone" secondary="+1234567890" />
                 </ListItem>
                 <ListItem>
-                  <LanguageIcon fontSize="small" />
-                  <ListItemText primary="Website" secondary="https://www.example.com" />
+                  <LanguageIcon />
+                  <ListItemText
+                    primary="Website"
+                    secondary={
+                      <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">
+                        
+                      w</a>
+                    }
+                  />
                 </ListItem>
               </List>
             </Box>

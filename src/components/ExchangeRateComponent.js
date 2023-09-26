@@ -44,7 +44,7 @@ const ExchangeRateComponent = () => {
             <div style={{ display: 'flex', justifyContent: 'flex-start' ,alignItems:"center"}}>
               <img src={`../assets/flags/${currency}.svg`} 
               style={{width:50,maxHeight:33,marginRight:5}}
-              alt={currency} />
+              alt={`${currency}-flag`} />
               <div key={currency} style={{ textAlign: 'left',justifyContent:"center" }}>
                 <Typography variant="subtitle1" >
                   {currency} 

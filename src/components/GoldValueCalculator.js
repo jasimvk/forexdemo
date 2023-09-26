@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, Typography, TextField, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import { Card, CardContent, Typography, Grid, TextField, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import mockData from '../_mock/mockData'; // Import the global mock data
 
 const GoldValueCalculator = () => {
@@ -34,34 +34,47 @@ const GoldValueCalculator = () => {
   };
 
   return (
-    <Card sx={{ m: 2 }}>
+    <Card sx={{ m: 2, border: "1px solid #c1c1c1" }}>
+      <Typography variant="h4"
+        sx={{
+          background: "#ffb861",
+          // color: "white",
+          padding: 2,
+        }}
+        textAlign={"center"}
+      >
+        Gold Value Search
+      </Typography>
       <CardContent>
-        <Typography variant="h5" gutterBottom>
-          Gold Value Calculator
-        </Typography>
-        <FormControl fullWidth sx={{ marginBottom: 2 }}>
-          <InputLabel>Unit</InputLabel>
-          <Select
-            value={unit}
-            onChange={handleUnitChange}
-          >
-            <MenuItem value="oz">Ounces (oz)</MenuItem>
-            <MenuItem value="kg">Kilograms (kg)</MenuItem>
-            <MenuItem value="gm">Grams (gm)</MenuItem>
-          </Select>
-        </FormControl>
-        <TextField
-          label={`Quantity (${unit})`}
-          type="number"
-          value={quantity}
-          onChange={handleQuantityChange}
-          sx={{ marginBottom: 2 }}
-        />
+        <Grid container spacing={2}> {/* Removed spacing */}
+          <Grid item xs={6} md={6} lg={6}>
+            <FormControl fullWidth sx={{ marginBottom: 2 }}>
+              <InputLabel>Unit</InputLabel>
+              <Select
+                value={unit}
+                onChange={handleUnitChange}
+              >
+                <MenuItem value="oz">Ounces (oz)</MenuItem>
+                <MenuItem value="kg">Kilograms (kg)</MenuItem>
+                <MenuItem value="gm">Grams (gm)</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={6} md={6} lg={6}>
+            <TextField
+              label={`Quantity (${unit})`}
+              type="number"
+              value={quantity}
+              onChange={handleQuantityChange}
+              sx={{ marginBottom: 2 }}
+            />
+          </Grid>
+        </Grid>
         <Typography variant="body2" color="textSecondary" gutterBottom>
           Gold Spot Rate: {goldRate} USD per ounce (Mock Data)
         </Typography>
         {calculatedValue !== null && (
-          <Typography variant="body2">
+          <Typography variant="h5" textAlign={"right"}>
             Value: {calculatedValue} USD
           </Typography>
         )}

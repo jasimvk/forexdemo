@@ -1,37 +1,102 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Grid, Typography } from '@mui/material';
 import mockData from '../_mock/mockData';
 
 const GoldSpotRateComponent = () => {
     const { goldRate, askPrice, bidPrice, lowPrice, highPrice } = mockData.goldSpotRate;
 
     // useEffect(() => {
-       
+
     // }, []);
 
     return (
-        <Card sx={{ m: 2 }}>
+        <Card sx={{ m: 2, border: "1px solid #c1c1c1" }}>
+            <Typography variant="h3"
+                sx={{
+                    background: "#ffb861",
+                    // color: "white",
+                    padding: 1,
+                }}
+                textAlign={"center"}
+            >
+                GOLD SPOT RATE
+            </Typography>
             <CardContent>
-                <Typography variant="h3" gutterBottom>
-                    Gold Spot Rate
-                </Typography>
-                <Typography variant="h3" component="div">
-                    {goldRate.toFixed(2)} AED
-                </Typography>
-                <Typography variant="body2" color="textSecondary" gutterBottom>
-                    Ask Price: {askPrice.toFixed(2)} AED
-                </Typography>
-                <Typography variant="body2" color="textSecondary" gutterBottom>
-                    Bid Price: {bidPrice.toFixed(2)} AED
-                </Typography>
-                <Typography variant="body2" color="textSecondary" gutterBottom>
-                    Low Price: {lowPrice.toFixed(2)} AED
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                    High Price: {highPrice.toFixed(2)} AED
-                </Typography>
+                <Grid container spacing={2}> {/* Removed spacing */}
+                    <Grid item xs={6} md={6} lg={6}>
+                        <Card  sx={{ border: "1px solid #c1c1c1" }}>
+                            <Typography variant="h5"
+                                textAlign={"center"} gutterBottom
+                                sx={{
+                                    background: "#d18d3a",
+                                    color: "white",
+                                    p: 1
+                                }}>
+                                ASK PRICE
+                            </Typography>
+                            <Typography variant="h5" textAlign={"center"} gutterBottom>
+                                {askPrice.toFixed(2)} USD
+                            </Typography>
+                        </Card>
+                    </Grid>
+
+
+                    <Grid item xs={6} md={6} lg={6}>
+                        <Card  sx={{ border: "1px solid #c1c1c1" }} >
+                            <Typography variant="h5"
+                                sx={{
+                                    background: "#d18d3a",
+                                    color: "white",
+                                    p: 1
+                                }}
+                                textAlign={"center"} gutterBottom>
+                                BID PRICE
+                            </Typography>
+                            <Typography variant="h5" textAlign={"center"} gutterBottom>
+                                {bidPrice.toFixed(2)} USD
+                            </Typography>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={6} md={6} lg={6}>
+                        <Card  sx={{ border: "1px solid #c1c1c1" }} >
+                            <Typography variant="h6"
+                                textAlign={"center"} gutterBottom
+                                sx={{
+                                    background: "#418b38",
+                                    color: "white",
+                                    p: 1
+                                }}>
+                                LOW PRICE
+                            </Typography>
+                            <Typography variant="h6" textAlign={"center"} gutterBottom>
+                                {lowPrice.toFixed(2)} USD
+                            </Typography>
+                        </Card>
+                    </Grid>
+
+
+                    <Grid item xs={6} md={6} lg={6}>
+                        <Card   sx={{ border: "1px solid #c1c1c1" }}>
+                            <Typography variant="h6"
+                                sx={{
+                                    background: "#b53131",
+                                    color: "white",
+                                    p: 1
+                                }}
+                                textAlign={"center"} gutterBottom>
+                                HIGH PRICE
+                            </Typography>
+                            <Typography variant="h6" textAlign={"center"} gutterBottom>
+                                {highPrice.toFixed(2)} USD
+                            </Typography>
+                        </Card>
+                    </Grid>
+
+                </Grid>
+
+               
             </CardContent>
-        </Card>
+        </Card >
     );
 };
 
