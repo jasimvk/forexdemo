@@ -4,6 +4,7 @@ import { Link, Container, Typography, Grid, Card } from '@mui/material';
 import GoldSpotRateComponent from '../components/GoldSpotRateComponent ';
 import SilverSpotRateComponent from '../components/SilverSpotRateComponent ';
 import GoldValueCalculator from '../components/GoldValueCalculator';
+import GoldPriceTable from '../components/GoldPriceTable';
 import useResponsive from '../hooks/useResponsive';
 import ExchangeRateComponent from '../components/ExchangeRateComponent';
 import Logo from '../components/logo';
@@ -58,6 +59,7 @@ export default function LoginPage() {
         <GoldSpotRateComponent />
         <SilverSpotRateComponent />
         <GoldValueCalculator/>
+        <GoldPriceTable/>
       </Container>
     </>
   );
