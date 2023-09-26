@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { Card, CardContent, Typography } from '@mui/material';
 
 const ExchangeRateComponent = () => {
   const [exchangeRates, setExchangeRates] = useState(null);
+  const selectedCurrencies = ['USD', 'INR', 'GBP', 'EUR'];
 
   useEffect(() => {
     // Fetch exchange rates data from the API
     fetch('https://v6.exchangerate-api.com/v6/ed760a71a797633fb65151c0/latest/USD')
       .then((response) => response.json())
       .then((data) => {
-        setExchangeRates(data.conversion_rates);
+        // Filter the exchange rates for the selected currencies
+        const filteredRates = Object.fromEntries(
+          Object.entries(data.conversion_rates)
+            .filter(([currency]) => selectedCurrencies.includes(currency))
+        );
+        setExchangeRates(filteredRates);
       })
       .catch((error) => {
         console.error('Error fetching exchange rates:', error);
@@ -16,44 +23,34 @@ const ExchangeRateComponent = () => {
   }, []);
 
   if (!exchangeRates) {
-    return <div>Loading...</div>;
+    return (
+      <Card sx={{ m: 2 }}>
+        <CardContent>
+          <Typography variant="h5" component="div">
+            Loading...
+          </Typography>
+        </CardContent>
+      </Card>
+    );
   }
 
   return (
-    <div>
-      <h1>Exchange Rates</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Currency</th>
-            <th>Rate</th>
-            <th>Flag</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>USD</td>
-            <td>{exchangeRates.USD}</td>
-            <td><img src="https://www.countryflags.io/US/flat/64.png" alt="US Flag" /></td>
-          </tr>
-          <tr>
-            <td>INR</td>
-            <td>{exchangeRates.INR}</td>
-            <td><img src="https://www.countryflags.io/IN/flat/64.png" alt="IN Flag" /></td>
-          </tr>
-          <tr>
-            <td>GBP</td>
-            <td>{exchangeRates.GBP}</td>
-            <td><img src="https://www.countryflags.io/GB/flat/64.png" alt="GB Flag" /></td>
-          </tr>
-          <tr>
-            <td>Euro</td>
-            <td>{exchangeRates.EUR}</td>
-            <td><img src="https://www.countryflags.io/EU/flat/64.png" alt="EU Flag" /></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <Card sx={{ m: 2 }}>
+      <CardContent>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          {selectedCurrencies.map((currency) => (
+            <div key={currency} style={{ textAlign: 'center' }}>
+              <Typography variant="subtitle1" gutterBottom>
+                {currency}
+              </Typography>
+              <Typography variant="body2">
+                {exchangeRates[currency].toFixed(2)}
+              </Typography>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
