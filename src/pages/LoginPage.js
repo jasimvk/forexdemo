@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Link, Container, Typography, Grid, Card } from '@mui/material';
 import GoldSpotRateComponent from '../components/GoldSpotRateComponent ';
 import SilverSpotRateComponent from '../components/SilverSpotRateComponent ';
+import GoldValueCalculator from '../components/GoldValueCalculator';
 import useResponsive from '../hooks/useResponsive';
 import ExchangeRateComponent from '../components/ExchangeRateComponent';
 import Logo from '../components/logo';
@@ -56,6 +57,7 @@ export default function LoginPage() {
         </Grid>
         <GoldSpotRateComponent />
         <SilverSpotRateComponent />
+        <GoldValueCalculator/>
       </Container>
     </>
   );
