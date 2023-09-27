@@ -74,7 +74,7 @@ export default function LoginPage() {
            {/* <Grid item xs={5} md={5} lg={5}>
            <GoldPriceNewsTicker />
 
-          </Grid>
+          </Grid> */}
          
         </Grid>
 
