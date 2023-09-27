@@ -33,25 +33,10 @@ const mockData = {
     ],
     mockNewsData : [
       {
-        title: 'Gold Prices Surge to New High',
-        date: '2023-09-15',
+        title: 'Gold Prices Surge to New High, Investors Eye Gold Amid Economic Uncertainty,Gold Demand Expected to Rise in Coming Months  ,  Gold Price Forecast: Bullish Trends Continue ,  Central Banks Increase Gold Reserves Investors Eye Gold Amid Economic Uncertainty,Gold Demand Expected to Rise in Coming Months  ,  Gold Price Forecast: Bullish Trends Continue ,  Central Banks Increase Gold Reserves Investors Eye Gold Amid Economic Uncertainty,Gold Demand Expected to Rise in Coming Months  ,  Gold Price Forecast: Bullish Trends Continue ,  Central Banks Increase Gold Reserves Investors Eye Gold Amid Economic Uncertainty,Gold Demand Expected to Rise in Coming Months  ,  Gold Price Forecast: Bullish Trends Continue ,  Central Banks Increase Gold Reserves'
+        
       },
-      {
-        title: 'Investors Eye Gold Amid Economic Uncertainty',
-        date: '2023-09-10',
-      },
-      {
-        title: 'Gold Demand Expected to Rise in Coming Months',
-        date: '2023-09-05',
-      },
-      {
-        title: 'Central Banks Increase Gold Reserves',
-        date: '2023-08-28',
-      },
-      {
-        title: 'Gold Price Forecast: Bullish Trends Continue',
-        date: '2023-08-20',
-      },
+      
     ],
   };
   

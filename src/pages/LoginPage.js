@@ -53,10 +53,10 @@ export default function LoginPage() {
               sx={{ height: 45, m: 4 }}
             />
           </Grid>
-          <Grid item xs={12} md={6} lg={6}>
+          <Grid item xs={12} md={8} lg={6}>
             <ExchangeRateComponent />
           </Grid>
-          <Grid item xs={12} md={3} lg={3}>
+          <Grid item xs={12} md={2} lg={3}>
             <DateTimeView />
           </Grid>
           <Grid item xs={12} md={4} lg={4}  >
@@ -66,7 +66,9 @@ export default function LoginPage() {
           <Grid item xs={12} md={6} lg={8}>
             <Card style={{height:'80%'}}>
               <TradingViewWidget />
+              
             </Card>
+            <GoldPriceNewsTicker/>
           </Grid>
         </Grid>
         <FloatingButton />

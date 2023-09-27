@@ -9,6 +9,9 @@ import {
   ListItem,
   ListItemText,
   Box,
+  Grid,
+  Link,
+  Divider,
 } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
@@ -64,50 +67,51 @@ const FloatingButton = () => {
             transform: 'translate(-50%, -50%)',
             width: '80%', // Adjust the width for responsiveness
             maxWidth: '650px', // Set a maximum width if needed
+            boxShadow: 4,
+            borderRadius: '8px',
+            padding: '16px',
           }}
         >
           <CardContent>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" align="center" gutterBottom>
               Contact Information
             </Typography>
-            <Box display="flex" justifyContent="space-between">
-              <List>
-                {socialMediaLinks.map((item, index) => (
-                  <ListItem key={index}>
-                    {item.icon}
-                    <ListItemText
-                      primary={item.label}
-                      secondary={
-                        <a href={item.link} target="_blank" rel="noopener noreferrer">
-                          {item.link}
-                        </a>
-                      }
-                    />
-                  </ListItem>
-                ))}
-              </List>
-              <List>
-                <ListItem>
-                  <EmailIcon />
-                  <ListItemText primary="Email" secondary="contact@example.com" />
-                </ListItem>
-                <ListItem>
-                  <PhoneIcon />
-                  <ListItemText primary="Phone" secondary="+1234567890" />
-                </ListItem>
-                <ListItem>
-                  <LanguageIcon />
+            <Divider />
+            <List>
+              {socialMediaLinks.map((item, index) => (
+                <ListItem key={index}>
+                  {item.icon}
                   <ListItemText
-                    primary="Website"
-                    secondary={
-                      <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">
-                        https://www.example.com
-                      </a>
+                    primary={
+                      <Link href={item.link} target="_blank" rel="noopener noreferrer">
+                        {item.label}
+                      </Link>
                     }
                   />
                 </ListItem>
-              </List>
-            </Box>
+              ))}
+            </List>
+            <Divider />
+            <List>
+              <ListItem>
+                <EmailIcon />
+                <ListItemText primary="Email" secondary="contact@example.com" />
+              </ListItem>
+              <ListItem>
+                <PhoneIcon />
+                <ListItemText primary="Phone" secondary="+1234567890" />
+              </ListItem>
+              <ListItem>
+                <LanguageIcon />
+                <ListItemText
+                  primary={
+                    <Link href="https://www.example.com" target="_blank" rel="noopener noreferrer">
+                      Website
+                    </Link>
+                  }
+                />
+              </ListItem>
+            </List>
           </CardContent>
         </Card>
       </Modal>

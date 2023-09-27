@@ -1,0 +1,34 @@
+/* Container for the news ticker */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding: '0px';
+    background-color: #fff; /* Adjust the background color as needed */
+  }
+  
+  /* List of news items */
+  .marquee-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    animation: scroll 40s linear infinite; /* Adjust the animation duration as needed */
+  }
+  
+  /* Individual news item */
+  .marquee-list .active {
+    padding: 0px;
+  }
+  
+  /* Keyframe animation for scrolling */
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
