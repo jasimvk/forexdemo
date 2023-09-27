@@ -31,50 +31,50 @@ export default function LoginPage() {
   const containerStyle = {
     backgroundImage: 'url("/assets/forexBg.svg")',
     backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    width: '100%',
+    // backgroundRepeat: 'no-repeat',
+    // backgroundPosition: 'center',
+    width: '100vw',
     height: '100vh', // You can adjust the height as needed
-    zoom: 1, // Disable zooming
+    // zoom: 1, // Disable zooming
   };
-  
+
   return (
     <>
       <Helmet>
         <title>Forex Gold | Demo</title>
       </Helmet>
 
-      <Container maxWidth="xl" style={containerStyle}>
+      <Container minWidth="md" maxWidth="xl" style={containerStyle}>
         <Grid container spacing={mdUp ? 3 : 0}>
           <Grid item xs={6} md={4} lg={4}>
-          {mdUp?  <Box
+            {mdUp ? <Box
               component="img"
               src="/assets/Demologo.png"
               sx={{ height: 45, m: 4 }}
-            />:
-             <Box
-              component="img"
-              src="/assets/Demologo.png"
-              sx={{ height: 25, m: 2,ml:1 }}
-            />
+            /> :
+              <Box
+                component="img"
+                src="/assets/Demologo.png"
+                sx={{ height: 25, m: 2, ml: 1 }}
+              />
             }
           </Grid>
-        {mdUp&& <Grid item xs={12} md={8} lg={6}>
+          {mdUp && <Grid item xs={12} md={8} lg={8}>
             <ExchangeRateComponent />
           </Grid>}
-          <Grid item xs={6} md={2} lg={2}>
+          {/* <Grid item xs={6} md={2} lg={2}>
             <DateTimeView />
-          </Grid>
+          </Grid> */}
           <Grid item xs={12} md={4} lg={4}  >
             <GoldSpotRateComponent />
             <GoldValueCalculator />
           </Grid>
           <Grid item xs={12} md={6} lg={8}>
-            <Card style={{height:'80%'}}>
+            <Card style={{ height: '85%' }}>
               <TradingViewWidget />
-              
+
             </Card>
-            <GoldPriceNewsTicker/>
+            <GoldPriceNewsTicker />
           </Grid>
         </Grid>
         <FloatingButton />

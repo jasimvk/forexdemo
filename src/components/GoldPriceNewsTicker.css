@@ -1,10 +1,12 @@
 /* Container for the news ticker */
 .marquee-container {
+  display: flex;
+  align-content: center;
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    padding: '0px';
+    padding: 0 !important;
     background-color: #fff; /* Adjust the background color as needed */
   }
   
@@ -13,10 +15,17 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    display: inline-block;
-    animation: scroll 120s linear infinite; /* Adjust the animation duration as needed */
+    font-size: 15px;
+    font-weight: bold;
+    /* display: inline-block; */
+    animation: scroll 60s linear infinite; /* Adjust the animation duration as needed */
   }
   
+  .marquee-list span {
+   
+    font-size: 20px;
+    font-weight: bold; 
+  }
   /* Individual news item */
   .marquee-list .active {
     padding: 0px;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, Divider, Typography } from '@mui/material';
+import DateTimeView from './DateTimeView';
 
 const ExchangeRateComponent = () => {
   const [exchangeRates, setExchangeRates] = useState(null);
@@ -36,7 +37,7 @@ const ExchangeRateComponent = () => {
 
   return (
     <Card sx={{
-      m: 2, p: 1, pt: 0, pb: 0,ml:0,mr:0
+      m: 2, ml:0,mr:0,mb:0
       // backgroundColor:"#f9fafbcc"  
     }}>
       <CardContent>
@@ -70,6 +71,7 @@ const ExchangeRateComponent = () => {
 
             </div>
           ))}
+            <DateTimeView />
         </div>
       </CardContent>
     </Card>
