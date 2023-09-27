@@ -13,10 +13,16 @@ import {
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LanguageIcon from '@mui/icons-material/Language';
-
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+
+const socialMediaLinks = [
+  { icon: <TwitterIcon />, label: 'Twitter', link: 'https://twitter.com/example' },
+  { icon: <FacebookIcon />, label: 'Facebook', link: 'https://www.facebook.com/example' },
+  { icon: <InstagramIcon />, label: 'Instagram', link: 'https://www.instagram.com/example' },
+  // Add more social media links here
+];
 
 const FloatingButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +49,7 @@ const FloatingButton = () => {
           Contact Us
         </Button>
       </div>
-    
+
       <Modal
         open={isOpen}
         onClose={handleCloseModal}
@@ -57,7 +63,7 @@ const FloatingButton = () => {
             left: '50%',
             transform: 'translate(-50%, -50%)',
             width: '80%', // Adjust the width for responsiveness
-            maxWidth: '400px', // Set a maximum width if needed
+            maxWidth: '650px', // Set a maximum width if needed
           }}
         >
           <CardContent>
@@ -66,40 +72,19 @@ const FloatingButton = () => {
             </Typography>
             <Box display="flex" justifyContent="space-between">
               <List>
-                <ListItem>
-                  <TwitterIcon />
-                  <ListItemText
-                    primary="Twitter"
-                    secondary={
-                      <a href="https://twitter.com/example" target="_blank" rel="noopener noreferrer" >
-                        
-                      w</a>
-                    }
-                  />
-                </ListItem>
-                <ListItem>
-                  <FacebookIcon />
-                  <ListItemText
-                    primary="Facebook"
-                    secondary={
-                      <a href="https://www.facebook.com/example" target="_blank" rel="noopener noreferrer">
-                        
-                      w</a>
-                    }
-                  />
-                </ListItem>
-                <ListItem>
-                  <InstagramIcon />
-                  <ListItemText
-                    primary="Instagram"
-                    secondary={
-                      <a href="https://www.instagram.com/example" target="_blank" rel="noopener noreferrer">
-                        
-                      w</a>
-                    }
-                  />
-                </ListItem>
-                {/* Add more social media links here */}
+                {socialMediaLinks.map((item, index) => (
+                  <ListItem key={index}>
+                    {item.icon}
+                    <ListItemText
+                      primary={item.label}
+                      secondary={
+                        <a href={item.link} target="_blank" rel="noopener noreferrer">
+                          {item.link}
+                        </a>
+                      }
+                    />
+                  </ListItem>
+                ))}
               </List>
               <List>
                 <ListItem>
@@ -116,8 +101,8 @@ const FloatingButton = () => {
                     primary="Website"
                     secondary={
                       <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">
-                        
-                      w</a>
+                        https://www.example.com
+                      </a>
                     }
                   />
                 </ListItem>
