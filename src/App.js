@@ -13,17 +13,7 @@ import LoginPage from './pages/LoginPage';
 
 export default function App() {
   return (
-    <div style={
-      {
-        backgroundImage:
-          "url('/assets/forexBg.jpg')",
-        height: '100vh',
-        // marginTop:'-70px',
-        // fontSize:'50px',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-      }
-    }>
+ 
       <HelmetProvider>
         <BrowserRouter>
           <ThemeProvider>
@@ -32,6 +22,6 @@ export default function App() {
             <LoginPage />
           </ThemeProvider>
         </BrowserRouter>
-      </HelmetProvider></div>
+      </HelmetProvider>  
   );
 }

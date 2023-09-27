@@ -33,9 +33,10 @@ export default function LoginPage() {
     backgroundSize: 'cover',
     // backgroundRepeat: 'no-repeat',
     // backgroundPosition: 'center',
-    width: '100vw',
+    width: '100%',
     height: '100vh', // You can adjust the height as needed
     // zoom: 1, // Disable zooming
+     
   };
 
   return (
@@ -44,9 +45,11 @@ export default function LoginPage() {
         <title>Forex Gold | Demo</title>
       </Helmet>
 
-      <Container minWidth="md" maxWidth="xl" style={containerStyle}>
-        <Grid container spacing={mdUp ? 3 : 0}>
-          <Grid item xs={6} md={4} lg={4} textAlign={"center"}>
+      <Container  maxWidth="xl" style={containerStyle} gutterBottom>
+      <FloatingButton />
+      <Grid     >
+        <Grid container spacing={1}   >
+          <Grid sx={{mt:2 }} item xs={6} md={4} lg={4} textAlign={"center"}>
             {mdUp ?
               <Typography variant="h4"
                 sx={{ p: 5 }}
@@ -61,18 +64,18 @@ export default function LoginPage() {
               </Typography>
             }
           </Grid>
-          {mdUp ? <Grid item xs={12} md={8} lg={8}>
+          {mdUp ? <Grid  sx={{mt:2 }} item xs={12} md={8} lg={8}>
             <ExchangeRateComponent />
           </Grid> :
-            <Grid item xs={6} md={2} lg={2}>
+            <Grid   sx={{mt:2 }}item xs={6} md={2} lg={2}>
               <DateTimeView />
             </Grid>
           }
-          <Grid item xs={12} md={4} lg={4}  >
+          <Grid  sx={{mt:2 }} item xs={12} md={4} lg={4}  >
             <GoldSpotRateComponent />
             <GoldValueCalculator />
           </Grid>
-          <Grid item xs={12} md={6} lg={8}>
+          <Grid  sx={{mt:2 }} item xs={12} md={6} lg={8}>
             <Card style={{ height: '85%' }}>
               <TradingViewWidget />
 
@@ -80,7 +83,7 @@ export default function LoginPage() {
             <GoldPriceNewsTicker />
           </Grid>
         </Grid>
-        <FloatingButton />
+        </Grid>
       </Container>
     </>
   );
