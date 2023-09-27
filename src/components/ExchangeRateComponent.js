@@ -36,7 +36,7 @@ const ExchangeRateComponent = () => {
 
   return (
     <Card sx={{
-      m: 2, p: 1, pt: 0, pb: 0,
+      m: 2, p: 1, pt: 0, pb: 0,ml:0,mr:0
       // backgroundColor:"#f9fafbcc"  
     }}>
       <CardContent>
