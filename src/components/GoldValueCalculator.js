@@ -47,9 +47,9 @@ const GoldValueCalculator = () => {
       </Typography>
       <CardContent>
         <Grid container spacing={2}> {/* Removed spacing */}
-          <Grid item xs={6} md={6} lg={6}>
+          <Grid item xs={6} md={6} lg={5}>
             <FormControl fullWidth sx={{ marginBottom: 2 }}>
-              <InputLabel>Unit</InputLabel>
+              {/* <InputLabel>Unit</InputLabel> */}
               <Select
                 value={unit}
                 onChange={handleUnitChange}
@@ -60,24 +60,28 @@ const GoldValueCalculator = () => {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={6} md={6} lg={6}>
+          <Grid item xs={6} md={6} lg={4}>
             <TextField
               label={`Quantity (${unit})`}
               type="number"
+              placeholder='Quantity'
               value={quantity}
               onChange={handleQuantityChange}
               sx={{ marginBottom: 2 }}
             />
+
           </Grid>
+          <Grid  item xs={6} md={6} lg={2}>
+            {calculatedValue !== null && (
+              <Typography variant="h5" textAlign={"right"}>
+                {calculatedValue} 
+              </Typography>
+            )}
+          </Grid>
+
         </Grid>
-        <Typography variant="body2" color="textSecondary" gutterBottom>
-          Gold Spot Rate: {goldRate} USD per ounce (Mock Data)
-        </Typography>
-        {calculatedValue !== null && (
-          <Typography variant="h5" textAlign={"right"}>
-            Value: {calculatedValue} USD
-          </Typography>
-        )}
+
+
       </CardContent>
     </Card>
   );
