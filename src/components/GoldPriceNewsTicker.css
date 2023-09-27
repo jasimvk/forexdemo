@@ -14,7 +14,7 @@
     padding: 0;
     margin: 0;
     display: inline-block;
-    animation: scroll 40s linear infinite; /* Adjust the animation duration as needed */
+    animation: scroll 120s linear infinite; /* Adjust the animation duration as needed */
   }
   
   /* Individual news item */

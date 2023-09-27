@@ -27,11 +27,11 @@ const DateTimeView = () => {
                 </Typography></>
         </Card> : 
         <>
-            <Typography   textAlign={"right"}
+            <Typography variant="h6"  textAlign={"right"}
                 sx={{ p: 1, pb: 0  }}>
                 {date.toLocaleTimeString()}
             </Typography>
-            <Typography   textAlign={"right"}
+            <Typography  gutterBottom textAlign={"right"}
                 sx={{ p:1,pt: 0,fontSize:12 }}>
                 {`${date.toLocaleDateString('en-US', { weekday: 'long' })}, ${date.toLocaleDateString()}`}
             </Typography></>
