@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, Paper, List, ListItem, ListItemText, Typography } from '@mui/material';
+import { Card, CardContent, Typography } from '@mui/material';
+import Marquee from 'react-double-marquee';
 import mockData from '../_mock/mockData';
 import './GoldPriceNewsTicker.css'; // Make sure to create a CSS file for styling
 
@@ -7,35 +8,25 @@ const GoldPriceNewsTicker = () => {
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   const mockNewsData = mockData.mockNewsData;
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentNewsIndex((prevIndex) => (prevIndex + 1) % mockNewsData.length);
-    }, 2000); // Reduced interval to scroll quickly
-
-    return () => clearInterval(interval);
-  }, []);
-
+ 
   return (
-    <Card sx={{ mt: 2, mb: 0, display: "flex", justifyContent: "space-between" }} >
-      <Typography textAlign={"left"}
+    <Card sx={{ mt: 2, mb: 0, display: 'flex', justifyContent: 'space-between', alignContent: 'cebtere' }}>
+      <Typography
+        textAlign={'right                                     '}
         sx={{
-          background: "#d18d3a",
-          color: "white",
+          background: '#d18d3a',
+          color: 'white',
           fontWeight: 900,
-          padding: 1, 
-        }}>
+          padding: 1,
+        }}
+      >
         HIGHLIGHTS:
       </Typography>
 
-      <CardContent className="marquee-container" >
-        <List className="marquee-list" >
-          {mockNewsData.map((newsItem, index) => (
-            <ListItem key={index} className={index === currentNewsIndex ? 'active' : ''}>
-              <ListItemText primary={newsItem.title} />
-            </ListItem>
-          ))}
-        </List>
-
+      <CardContent className="marquee-container">
+      <Marquee>
+          {mockNewsData[currentNewsIndex].title}
+        </Marquee>
       </CardContent>
     </Card>
   );
