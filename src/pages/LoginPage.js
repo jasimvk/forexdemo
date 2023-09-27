@@ -5,6 +5,7 @@ import ExchangeRateComponent from '../components/ExchangeRateComponent';
 import GoldSpotRateComponent from '../components/GoldSpotRateComponent ';
 import SilverSpotRateComponent from '../components/SilverSpotRateComponent ';
 import GoldValueCalculator from '../components/GoldValueCalculator';
+import TradingViewWidget from '../components/TradingViewWidget';
 import GoldPriceTable from '../components/GoldPriceTable';
 import GoldPriceNewsTicker from '../components/GoldPriceNewsTicker ';
 import FloatingButton from '../components/FloatingButton';
@@ -34,7 +35,9 @@ export default function LoginPage() {
     backgroundPosition: 'center',
     width: '100%',
     height: '100vh', // You can adjust the height as needed
+    zoom: 1, // Disable zooming
   };
+  
   return (
     <>
       <Helmet>
@@ -42,16 +45,13 @@ export default function LoginPage() {
       </Helmet>
 
       <Container maxWidth="xl" style={containerStyle}>
-        <Grid container spacing={0}> {/* Removed spacing */}
-          <Grid item xs={1} md={3} lg={3}>
-
-
+        <Grid container spacing={mdUp ? 3 : 0}>
+          <Grid item xs={12} md={3} lg={3}>
             <Box
               component="img"
               src="/assets/Demologo.png"
               sx={{ height: 45, m: 4 }}
             />
-
           </Grid>
           <Grid item xs={12} md={6} lg={6}>
             <ExchangeRateComponent />
@@ -59,30 +59,17 @@ export default function LoginPage() {
           <Grid item xs={12} md={3} lg={3}>
             <DateTimeView />
           </Grid>
-          <Grid item xs={12} md={4} lg={4}>
-            <GoldValueCalculator />
-
-          </Grid>
-          <Grid item xs={12} md={4} lg={4}>
+          <Grid item xs={12} md={4} lg={4}  >
             <GoldSpotRateComponent />
-
+            <GoldValueCalculator />
           </Grid>
-          <Grid item xs={12} md={4} lg={4}>
-            <GoldPriceTable />
-
+          <Grid item xs={12} md={6} lg={8}>
+            <Card style={{height:'80%'}}>
+              <TradingViewWidget />
+            </Card>
           </Grid>
-           {/* <Grid item xs={5} md={5} lg={5}>
-           <GoldPriceNewsTicker />
-
-          </Grid> */}
-         
         </Grid>
-
-
-
-
         <FloatingButton />
-
       </Container>
     </>
   );
