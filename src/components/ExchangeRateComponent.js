@@ -35,27 +35,39 @@ const ExchangeRateComponent = () => {
   }
 
   return (
-    <Card sx={{ m: 2,p:1,pt:0,pb:0,
-    // backgroundColor:"#f9fafbcc"  
+    <Card sx={{
+      m: 2, p: 1, pt: 0, pb: 0,
+      // backgroundColor:"#f9fafbcc"  
     }}>
       <CardContent>
-        <div style={{ display: 'flex', justifyContent: 'space-between' ,alignItems:"center"}}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center" }}>
           {selectedCurrencies.map((currency) => (
-            <div style={{ display: 'flex', justifyContent: 'flex-start' ,alignItems:"center"}}>
-              <img src={`../assets/flags/${currency}.svg`} 
-              style={{width:50,maxHeight:33,marginRight:5}}
-              alt={`${currency}-flag`} />
-              <div key={currency} style={{ textAlign: 'left',justifyContent:"center" }}>
-                <Typography variant="subtitle1" >
-                  {currency} 
-                </Typography>   
+            <div
+              style={{
+                display: 'flex',
+                padding: currency === "USD" ? "5px 10px 5px 10px" : 0,
+                border: currency === "USD" ? "1px solid #b1b1b1" : "none",
+                borderRadius: 5,
+                justifyContent: 'flex-start',
+                alignItems: "center"
+              }}
+
+            >
+              <img src={`../assets/flags/${currency}.svg`}
+                style={{ width: 50, maxHeight: 32, marginRight: 5 }}
+                alt={`${currency}-flag`} />
+              <div key={currency}
+                style={{ textAlign: 'left', justifyContent: "center" }}>
                 <Typography variant="subtitle2" >
-                  
+                  {currency}
+                </Typography>
+                <Typography variant="subtitle2" >
+
                   {exchangeRates[currency].toFixed(2)}
                 </Typography>
                 {/* */}
               </div>
-               
+
             </div>
           ))}
         </div>
