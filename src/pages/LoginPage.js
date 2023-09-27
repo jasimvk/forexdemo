@@ -46,17 +46,23 @@ export default function LoginPage() {
 
       <Container maxWidth="xl" style={containerStyle}>
         <Grid container spacing={mdUp ? 3 : 0}>
-          <Grid item xs={12} md={4} lg={4}>
-            <Box
+          <Grid item xs={6} md={4} lg={4}>
+          {mdUp?  <Box
               component="img"
               src="/assets/Demologo.png"
               sx={{ height: 45, m: 4 }}
+            />:
+             <Box
+              component="img"
+              src="/assets/Demologo.png"
+              sx={{ height: 25, m: 2,ml:1 }}
             />
+            }
           </Grid>
-          <Grid item xs={12} md={8} lg={6}>
+        {mdUp&& <Grid item xs={12} md={8} lg={6}>
             <ExchangeRateComponent />
-          </Grid>
-          <Grid item xs={12} md={2} lg={2}>
+          </Grid>}
+          <Grid item xs={6} md={2} lg={2}>
             <DateTimeView />
           </Grid>
           <Grid item xs={12} md={4} lg={4}  >

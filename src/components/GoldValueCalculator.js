@@ -34,7 +34,7 @@ const GoldValueCalculator = () => {
   };
 
   return (
-    <Card sx={{ m: 2, border: "1px solid #c1c1c1" }}>
+    <Card sx={{ mt: 2, mb: 2, border: "1px solid #c1c1c1" }}>
       <Typography variant="h5"
         sx={{
           background: "#ffb861",
@@ -47,7 +47,7 @@ const GoldValueCalculator = () => {
       </Typography>
       <CardContent>
         <Grid container spacing={2}> {/* Removed spacing */}
-          <Grid item xs={5} md={4} lg={4}>
+          <Grid item xs={4} md={4} lg={4}>
             <FormControl fullWidth 
             // sx={{ marginBottom: 2 }}
             >
@@ -65,7 +65,7 @@ const GoldValueCalculator = () => {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={5} md={3} lg={3}>
+          <Grid item xs={3} md={3} lg={3}>
             <TextField
               label={`Quantity`}
               type="number"
@@ -76,7 +76,7 @@ const GoldValueCalculator = () => {
             />
 
           </Grid>
-          <Grid  item xs={6} md={4} lg={5}>
+          <Grid  item xs={5} md={5} lg={5}>
            
           {/* <TextField
               label={`Rate`}

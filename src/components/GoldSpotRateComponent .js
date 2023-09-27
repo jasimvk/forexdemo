@@ -10,7 +10,7 @@ const GoldSpotRateComponent = () => {
     // }, []);
 
     return (
-        <Card sx={{ m: 2, mt:0, border: "1px solid #c1c1c1", }}>
+        <Card sx={{ m: 0, mt:0, border: "1px solid #c1c1c1", }}>
             <Typography variant="h4"
                 sx={{
                     background: "#ffb861",
