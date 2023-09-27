@@ -35,45 +35,67 @@ const GoldValueCalculator = () => {
 
   return (
     <Card sx={{ m: 2, border: "1px solid #c1c1c1" }}>
-      <Typography variant="h4"
+      <Typography variant="h5"
         sx={{
           background: "#ffb861",
           // color: "white",
-          padding: 2,
+          padding: 1,
         }}
         textAlign={"center"}
       >
-        Gold Value Search
+       GOLD RATE SEARCH
       </Typography>
       <CardContent>
         <Grid container spacing={2}> {/* Removed spacing */}
-          <Grid item xs={6} md={6} lg={5}>
-            <FormControl fullWidth sx={{ marginBottom: 2 }}>
+          <Grid item xs={5} md={4} lg={4}>
+            <FormControl fullWidth 
+            // sx={{ marginBottom: 2 }}
+            >
               {/* <InputLabel>Unit</InputLabel> */}
               <Select
                 value={unit}
                 onChange={handleUnitChange}
               >
-                <MenuItem value="oz">Ounces (oz)</MenuItem>
+                {/* <MenuItem value="oz">Ounces (oz)</MenuItem>
                 <MenuItem value="kg">Kilograms (kg)</MenuItem>
-                <MenuItem value="gm">Grams (gm)</MenuItem>
+                <MenuItem value="gm">Grams (gm)</MenuItem> */}
+                <MenuItem value="oz">OZ</MenuItem>
+                <MenuItem value="kg">KG</MenuItem>
+                <MenuItem value="gm">GM</MenuItem>
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={6} md={6} lg={4}>
+          <Grid item xs={5} md={3} lg={3}>
             <TextField
-              label={`Quantity (${unit})`}
+              label={`Quantity`}
               type="number"
               placeholder='Quantity'
               value={quantity}
               onChange={handleQuantityChange}
-              sx={{ marginBottom: 2 }}
+              // sx={{ marginBottom: 2 }}
             />
 
           </Grid>
-          <Grid  item xs={6} md={6} lg={2}>
+          <Grid  item xs={6} md={4} lg={5}>
+           
+          {/* <TextField
+              label={`Rate`}
+              type="number"
+              placeholder='Rate'
+              value={calculatedValue}
+              
+           disabled 
+              sx={{ marginBottom: 2 }}
+            /> */}
             {calculatedValue !== null && (
-              <Typography variant="h5" textAlign={"right"}>
+              <Typography variant="h5" textAlign={"right"}
+              sx={{
+                padding:1.5,
+                border:"1px solid",
+                borderRadius:1,
+                overflow:'hidden'
+              }}
+              >
                 {calculatedValue} 
               </Typography>
             )}

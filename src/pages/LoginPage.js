@@ -46,7 +46,7 @@ export default function LoginPage() {
 
       <Container maxWidth="xl" style={containerStyle}>
         <Grid container spacing={mdUp ? 3 : 0}>
-          <Grid item xs={12} md={3} lg={3}>
+          <Grid item xs={12} md={4} lg={4}>
             <Box
               component="img"
               src="/assets/Demologo.png"
@@ -56,7 +56,7 @@ export default function LoginPage() {
           <Grid item xs={12} md={6} lg={6}>
             <ExchangeRateComponent />
           </Grid>
-          <Grid item xs={12} md={3} lg={3}>
+          <Grid item xs={12} md={2} lg={2}>
             <DateTimeView />
           </Grid>
           <Grid item xs={12} md={4} lg={4}  >
