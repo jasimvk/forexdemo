@@ -7,19 +7,31 @@ import ThemeProvider from './theme';
 // components
 import { StyledChart } from './components/chart';
 import ScrollToTop from './components/scroll-to-top';
+import LoginPage from './pages/LoginPage';
 
 // ----------------------------------------------------------------------
 
 export default function App() {
   return (
-    <HelmetProvider>
-      <BrowserRouter>
-        <ThemeProvider>
-          <ScrollToTop />
-          <StyledChart />
-          <Router />
-        </ThemeProvider>
-      </BrowserRouter>
-    </HelmetProvider>
+    <div style={
+      {
+        backgroundImage:
+          "url('/assets/forexBg.jpg')",
+        height: '100vh',
+        // marginTop:'-70px',
+        // fontSize:'50px',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      }
+    }>
+      <HelmetProvider>
+        <BrowserRouter>
+          <ThemeProvider>
+            {/* <ScrollToTop />
+          <StyledChart /> */}
+            <LoginPage />
+          </ThemeProvider>
+        </BrowserRouter>
+      </HelmetProvider></div>
   );
 }

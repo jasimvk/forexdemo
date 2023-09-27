@@ -30,15 +30,16 @@ const DateTimeView = () => {
                 </Typography></>
         </div> 
         : 
-        <>
+        <div>
             <Typography variant="h6"  textAlign={"right"}
                 sx={{ p: 1, pb: 0  }}>
                 {date.toLocaleTimeString()}
             </Typography>
-            <Typography  gutterBottom textAlign={"right"}
+            <Typography    textAlign={"right"}
                 sx={{ p:1,pt: 0,fontSize:12 }}>
                 {`${date.toLocaleDateString('en-US', { weekday: 'long' })}, ${date.toLocaleDateString()}`}
-            </Typography></>
+            </Typography>
+            </div>
 
     );
 };

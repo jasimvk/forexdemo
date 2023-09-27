@@ -46,25 +46,28 @@ export default function LoginPage() {
 
       <Container minWidth="md" maxWidth="xl" style={containerStyle}>
         <Grid container spacing={mdUp ? 3 : 0}>
-          <Grid item xs={6} md={4} lg={4}>
-            {mdUp ? <Box
-              component="img"
-              src="/assets/Demologo.png"
-              sx={{ height: 45, m: 4 }}
-            /> :
-              <Box
-                component="img"
-                src="/assets/Demologo.png"
-                sx={{ height: 25, m: 2, ml: 1 }}
-              />
+          <Grid item xs={6} md={4} lg={4} textAlign={"center"}>
+            {mdUp ?
+              <Typography variant="h4"
+                sx={{ p: 5 }}
+              >
+                LOGO NAME
+              </Typography>
+              :
+              <Typography variant="h6"
+                sx={{ p: 2, pl: 1 }}
+              >
+                LOGO NAME
+              </Typography>
             }
           </Grid>
-          {mdUp && <Grid item xs={12} md={8} lg={8}>
+          {mdUp ? <Grid item xs={12} md={8} lg={8}>
             <ExchangeRateComponent />
-          </Grid>}
-          {/* <Grid item xs={6} md={2} lg={2}>
-            <DateTimeView />
-          </Grid> */}
+          </Grid> :
+            <Grid item xs={6} md={2} lg={2}>
+              <DateTimeView />
+            </Grid>
+          }
           <Grid item xs={12} md={4} lg={4}  >
             <GoldSpotRateComponent />
             <GoldValueCalculator />
