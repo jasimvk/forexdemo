@@ -32,11 +32,11 @@ const mockData = {
       },
     ],
     mockNewsData : [
+      
       {
         title: 'Gold Prices Surge to New High, Investors Eye Gold Amid Economic Uncertainty,Gold Demand Expected to Rise in Coming Months  ,  Gold Price Forecast: Bullish Trends Continue ,  Central Banks Increase Gold Reserves Investors Eye Gold Amid Economic Uncertainty,Gold Demand Expected to Rise in Coming Months  ,  Gold Price Forecast: Bullish Trends Continue ,  Central Banks Increase Gold Reserves Investors Eye Gold Amid Economic Uncertainty,Gold Demand Expected to Rise in Coming Months  ,  Gold Price Forecast: Bullish Trends Continue ,  Central Banks Increase Gold Reserves Investors Eye Gold Amid Economic Uncertainty,Gold Demand Expected to Rise in Coming Months  ,  Gold Price Forecast: Bullish Trends Continue ,  Central Banks Increase Gold Reserves'
         
       },
-      
     ],
   };
   
