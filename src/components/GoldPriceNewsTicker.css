@@ -1,12 +1,11 @@
 /* Container for the news ticker */
 .marquee-container {
-  display: flex;
-  align-content: center;
+ 
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    padding: 0 !important;
+    /* padding: 0 !important; */
     background-color: #fff; /* Adjust the background color as needed */
   }
   
