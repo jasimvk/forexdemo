@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom/client';
+import { inject } from '@vercel/analytics';
 
 //
 import App from './App';
@@ -10,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(<App />);
+inject()
 
 // If you want to enable client cache, register instead.
 serviceWorker.unregister();
