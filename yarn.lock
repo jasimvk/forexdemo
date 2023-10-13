@@ -2374,9 +2374,9 @@
     "eslint-visitor-keys" "^3.3.0"
 
 "@vercel/analytics@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@vercel/analytics/-/analytics-1.0.2.tgz"
-  integrity sha512-BZFxVrv24VbNNl5xMxqUojQIegEeXMI6rX3rg1uVLYUEXsuKNBSAEQf4BWEcjQDp/8aYJOj6m8V4PUA3x/cxgg==
+  "integrity" "sha512-BZFxVrv24VbNNl5xMxqUojQIegEeXMI6rX3rg1uVLYUEXsuKNBSAEQf4BWEcjQDp/8aYJOj6m8V4PUA3x/cxgg=="
+  "resolved" "https://registry.npmjs.org/@vercel/analytics/-/analytics-1.0.2.tgz"
+  "version" "1.0.2"
 
 "@webassemblyjs/ast@1.11.1":
   "integrity" "sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw=="
