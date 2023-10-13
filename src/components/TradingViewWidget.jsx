@@ -33,18 +33,20 @@ export default function TradingViewWidget() {
             // autosize: true,
             width: "'100%",
             height:'100%', 
-            symbol: "OANDA:XAUUSD",
-            interval: "1",
-            timezone: "Etc/UTC",
+            symbol: "XAUUSD", 
+            interval: "60",
+            timezone: "Asia/Dubai",
             theme: "light",
             style: "1",
-            locale: "en",
+            locale: "en", 
             enable_publishing: false,
-            hide_top_toolbar: true,
             hide_legend: true,
-            save_image: false,
-            hide_volume: true,
-            container_id: "tradingview_407e0"
+            allow_symbol_change: false,
+            // hide_volume: true,
+            container_id: "tradingview_407e0",
+            overrides: {
+              "mainSeriesProperties.currency_code": "AED"
+            }
           });
         }
       }

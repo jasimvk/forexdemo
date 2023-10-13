@@ -51,16 +51,14 @@ export default function LoginPage() {
         <Grid container spacing={1}   >
           <Grid sx={{mt:2 }} item xs={6} md={4} lg={4} textAlign={"center"}>
             {mdUp ?
-              <Typography variant="h4"
-                sx={{ p: 5 }}
-              >
-                LOGO NAME
-              </Typography>
+              
+             <Logo/>
+            
               :
               <Typography variant="h6"
                 sx={{ p: 2, pl: 1 }}
               >
-                LOGO NAME
+                <Logo/>
               </Typography>
             }
           </Grid>

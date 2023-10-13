@@ -21,8 +21,8 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   const logoimg = (
     <Box
       component="img"
-      src="/assets/Demologo.png"
-      sx={{ width: 150, height: 40, cursor: 'pointer', ...sx }}
+      src="/assets/LOONALOGO.png"
+      sx={{   cursor: 'pointer', ...sx }}
     />
   );
 
@@ -31,8 +31,8 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
       ref={ref}
       component="div"
       sx={{
-        width: 40,
-        height: 40,
+        width:250,
+        // height: 40,
         display: 'inline-flex',
         ...sx,
       }}
